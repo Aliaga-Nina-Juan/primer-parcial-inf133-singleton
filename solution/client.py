@@ -5,8 +5,10 @@ url = "http://localhost:8000/"
 print("--------------------------------------------------")
 print("----------------SE AÑADE UNA PARTIDA--------------")
 print("--------------------------------------------------")
-
-
+response = requests.request(
+    method="POST", url=url + "guess", json={"player": "Juan"}
+)
+print(response.text)
 
 
 response = requests.request(
@@ -21,6 +23,6 @@ print("--------------------------------------------------")
 print("----------------SE JUEGA UNA PARTIDA--------------")
 print("--------------------------------------------------")
 response = requests.request(
-    method="PUT", url=url + "guess", json={"attempt": 75}
+    method="PUT", url=url + "guess", json={"attempt": 82}
 )
 print(response.text)
